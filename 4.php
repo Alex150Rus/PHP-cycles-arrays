@@ -8,6 +8,19 @@ $mass = [
     'ъ' => '', 'ы' => 'y', 'э' => 'e', 'ю' => 'yu', 'я' => 'ya'
 ];
 
+$str = 'я меняю только маленькие буквы, большие прописывать - лень!';
+echo "$str<br>";
+
+transliterator($str, $mass);
+
+function transliterator ($string, $arrayOfLetters) {
+    foreach ($arrayOfLetters as $key => $value) {
+        $string = str_replace($key, $value, $string);
+    }
+
+    echo $string;
+}
+
 
 /**
  * Created by PhpStorm.
